@@ -1,0 +1,984 @@
+/* Variables */
+:root {
+	--text-color1 : white;
+	--text-color2 : #008632;
+	--text-color3 : purple;
+	--background-color1 : #cefad0;
+	--background-color2 : #e9fce9;
+	--background-color3 : #ebe8fc;
+	--text-color-dark : white;
+	--background-dark : #454545;
+	--button-color: #008632;
+	--fontAwesome-color: #008632;
+}
+
+
+/* Start of General formatting */
+
+html { scroll-behavior: smooth;}
+
+/* Light Mode / Dark Mode */
+
+.light-dark {
+	position: fixed;
+	top: 10%;		/* moves label under header*/
+	margin-left: 25px;
+	z-index: 4;
+}
+
+label.theme-label-light { 
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+label.theme-label-light:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+input#light-theme-setting:checked ~ main label[for=light-theme-setting] {
+    font-weight: bold;
+    background-color: var(--text-color2);    
+    color: #fff;
+	transition: 300ms;
+}
+
+label.theme-label-dark { 
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 10px 20px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+label.theme-label-dark:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+input#dark-theme-setting:checked ~ main label[for=dark-theme-setting] {
+    font-weight: bold;
+    background-color: var(--text-color2);    
+    color: #fff;
+	transition: 300ms;
+}
+/* Dark Mode Backgrounds */
+
+input#dark-theme-setting:checked ~ main { 
+	background-color: var(--background-dark);
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main header{ 
+	background-color: var(--background-dark);
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #showcase{ 
+	background-image: url('../../../images/hero-default-dark.webp'); 
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #portfolio{ 
+	background-color: var(--background-dark); 
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #portfolio div{ 
+	background-color: var(--background-dark); 
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #contact{ 
+	background-image: url('../../../images/frog-background-default-dark.webp');
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main footer{ 
+	background-color: var(--background-dark); 
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+/* Dark Mode Backgrounds */
+
+
+
+/* Dark Mode Text */
+
+/* needed to do each individually because it wouldnt work when they were all together */
+
+input#dark-theme-setting:checked ~ main p{
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main h2{
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main h3{
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main h4{
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main h5{
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main li{
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main dd {
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main dt{
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main nav a:hover { 
+	color: white;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+	
+/* Dark Mode Text */
+
+input#dark-theme-setting:checked ~ main #about .icon::before { 
+	background-color: #fff; /* makes time line line white in dark mode */
+	transition: 300ms;
+	transition-timing-function: ease;
+}	
+
+input#dark-theme-setting:checked ~ main #cv .container h3{ 
+	border-color: #fff; /* makes border line in cv white in dark mode */
+	transition: 300ms;
+	transition-timing-function: ease;
+}		
+
+input#dark-theme-setting:checked ~ main .submit:hover { 
+	background-color: #000; /* makes submit button easier to look at in dark mode */
+	transition: 300ms;
+	transition-timing-function: ease;
+}	
+
+input[name="page-theme"] { display: none; }
+
+/* Light Mode / Dark Mode */
+
+
+
+/* Body Container Styles */
+
+body{
+	font-size: 0.93rem;
+	font-family: 'Roboto', sans-serif;
+	padding: 0;
+	margin: 0;
+	background-color: var(--background-color2);
+}
+
+/* Body Container Styles */
+
+
+
+/* Page Heading Styles */
+
+.page-heading{
+	padding-top: 10px;
+	text-align: center;  /* Centers all page headings */
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.page-heading h2{ font-size: 2.5em; }
+
+.page-heading h3{ 
+	font-size: 1em;
+	margin-top: -25px;		/* Moves sub-heading closer to heading */
+	margin-bottom: 50px;	/* Pushes section content down from sub heading */
+	font-style: italic;
+	font-weight: 100;		/* makes font lighter */
+}
+
+/* Page Heading Styles */
+
+
+
+section { padding-top: 50px; } /* Makes sections just under nav bar placement */
+
+
+
+/* Container Element for page */
+
+.container{
+	display:flex;
+	flex-direction: column;		/* makes page default a column */
+	align-items: center;
+	margin-left: auto;		/* set auto margin left*/
+	margin-right: auto;		/* set auto margin right*/
+	text-align: center;
+} 
+
+/* Container Element for page */
+
+
+
+/* End of General Formatting */
+
+
+
+/* Start of Header Styles */
+
+.header-color{ background-color: var(--background-color1); }	/* Header background */
+
+.header-box {
+	display: flex;
+	flex-wrap: wrap;		/* used to move menu list to next line */
+}
+
+header{
+	border-bottom: 2px solid var(--text-color2);
+	position: fixed;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 5;
+	
+}
+
+header nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;				/* Makes flex box take the full screen */
+}
+
+
+
+/* Nav Bar Links */
+
+header a{
+	color: var(--text-color2);
+	text-decoration:none;
+	text-transform: uppercase;
+	font-size: 1rem;
+}
+
+nav ul a:hover {
+		color: var(--text-color2);		/* adds highlight to menu options */
+		font-weight: 600;
+} 
+
+/* Nav Bar Links */
+
+
+
+/* Title Button */
+
+header span {
+	color: var(--text-color2);
+	font-size: 1.5em;
+	margin-left: 25px;	/* Pushes Title slightly to the right */
+}
+
+/* Title Button */
+
+
+
+/* Hamburger Menu */
+
+header label { 
+	margin-left: auto;	/* Moves label to the right */
+	margin-right: 25px;	/* small space from the right */
+	color: var(--text-color2);
+	padding: 10px;
+	border: 2px solid var(--text-color2);
+	border-radius: 10px;
+}
+
+#toggle { display: none; }	/* Hides checkbox */
+
+#toggle:checked ~ul{ display: block;} /* un-hides menu */
+
+/* Hamburger Menu */
+
+
+/* Menu Styles */
+
+header li { 
+	padding: 0 20px; 		/* Pushes list elements apart */
+	white-space: nowrap;	/* keeps all words on one line */
+} 
+
+.header-box ul {
+	list-style: none;
+	display: flex;
+	flex-direction: row;
+	Padding-top: 3px;		/* Pushes menu list slightly down to be centered with title */
+	padding-left: 450px;	/* keeps list centered and large enough for top border line */
+	padding-right:450px;	/* keeps list centered and large enough for top border line */
+	border-top: 1px solid var(--text-color2);
+	display: none;		/* hides menu until checked */
+}
+
+/* Menu Styles */
+
+
+
+/*End of Header Styles */
+
+
+
+/* Start of Showcase Styles */
+
+#showcase{
+	min-height: 100vh;		/* Makes showcase the height of the viewport */
+	background-image: url('../../../images/hero-default.webp'); /* Background image */ 
+	background-size: cover;		/* Makes background image take up the entire showcase */
+	background-position: center;
+	text-align: center;
+	color: var(--text-color1);
+	display: flex;		/* Makes entire showcase a flex box */
+}
+
+#showcase .container{ 
+	flex-direction: column; 	/* Makes showcase a column instead of a row */
+}	
+
+
+
+/* Name Title Styles */
+
+#showcase h1{
+	font-size: 2em;
+	font-weight: normal;	/* Makes header lose bold */
+	text-shadow: 0 0 30px #444;	/* Adds a dark grey shadow to the text */
+	font-style: italic;
+	margin-top: 30vh;		/* pushes title to just under the face */
+}
+
+/* Name Title Styles */
+
+
+/* Sub Title Styles */
+
+#showcase h2 {
+	font-size: 3em;
+	font-weight: 900;	/* Makes the text even bolder */
+	margin-top: -10px;	/* Pushes text closer to Name Title */
+	text-transform: uppercase;
+	text-shadow: 0 0 30px #444; /* Adds a dark grey shadow to the text */
+	width: 90%;	/* Makes showcase look more full */
+}
+
+/* Sub Title Styles */
+
+
+
+/* Button Styles */
+
+#showcase a {
+	font-size: 2em;
+	padding: 25px;		/* makes button bigger */
+	border: 1px solid black;
+	background-color: var(--button-color);
+	color: var(--text-color1);
+	text-decoration:none;	/* Removes underline from link */
+	border-radius: 10px;	/* round border edges */
+}
+
+/* hovering over skills button */
+#showcase a:hover{
+	background-color: black;
+	border: 1px solid white;
+}
+
+/* Button Styles */
+
+
+
+/* End of Showcase Styles */
+
+
+
+/* Start of Skills Styles */
+
+#skills .container{
+	width: 90%;		/* Makes skill section feel more full */
+	padding-bottom: 100px;	/* pushes portfolio a little bit lower */
+}
+
+#skills .container p{ text-align: justify;}
+	
+#skills .skill-box{ 
+	width: 80%;		/* makes each box take up the same amount of space */
+	margin: 25px; 	/* seperates boxes */
+}		
+
+#skills .fa-stack{
+	z-index: 1;
+	font-size: 4em;
+}
+
+#skills .fa-circle{ color: var(--fontAwesome-color); }
+
+/* End of Skills */
+
+
+
+/* Start of Portfolio Styles */
+
+#portfolio {
+	background-color: var(--background-color3);
+	padding-bottom: 50px;	/* pushes about section down */
+}
+
+#portfolio .container{ width: 90%; } /* Reduces container sized to better fit the screen */	
+
+#portfolio div{
+	flex-wrap: wrap;	/* Wraps around to the the next line */
+	width: 80%;			/* Keeps each div the same width */
+	justify-content: center;
+	overflow: hidden;	/* hides overhang from pictures */
+	border-radius: 10px;	/* makes each div rounder */
+}
+
+#portfolio .container div{ margin: 30px; }		/* seperates each div */
+
+/* Makes image bounce when you hover over it */
+#portfolio .container div:hover{
+	margin-top: 10px;
+	transition: 200ms;
+}
+
+#portfolio p{ text-align: center; } /* centers text for mobile */
+
+#coming-soon{ border-radius: 10px; }	/* round border for coming soon image */
+
+/* End of Portfolio Styles */
+
+
+
+/* Start of About Styles*/
+
+/* About section margin */
+#about {
+	margin-left: 15px;		
+	margin-right: 15px;
+}
+
+#about .event{ 
+	margin-top: 100px; /* Adds space between title and content */
+	position: relative;
+	font-size: 0.93em;
+	z-index: 2;
+} 
+
+
+
+/* Event box with text on the left side */
+
+#about div.event-left {
+	display: flex;
+	flex-direction: row-reverse;		/* goes same as event right */
+}
+
+#about .event-left .info {
+	width: 80%;		/* width of text div */
+	margin-left: auto;	/* pushes the text away from the images */
+}
+
+#about .event-left .blank { display:none;} /* makes blank div dissapear */
+
+#about .event-left { 
+	text-align: left; 	/* text goes towards the image */
+	justify-content: center;
+	align-items: center;
+}
+
+#about .event-left .icon { 
+	margin-right: 20px; 		/* pushes image to the left */
+	position: relative;			/* makes before element relative to .icon */
+	padding-bottom: 25px;		/* adds spacing between event rows */
+	padding-top: 25px;			/* adds spacing between event rows */
+	}
+
+/* Event box with text on the left side */
+
+
+
+/* Event box with text on the right side */
+
+#about div.event-right {
+	display: flex;
+	flex-direction: row-reverse;	
+}
+
+#about .event-right { 
+	justify-content: center;
+	align-items: center;
+}
+
+#about .event-right .info {
+	width: 80%;		/* width of text div */
+	margin-left: auto;	/* pushes the text away from the images */
+}
+
+#about .event-right .blank { display:none;}	/* makes blank div dissapear */
+
+#about .event-right { text-align: left; }	/* text goes towards the image */
+
+#about .event-right .icon { 
+	margin-right: 20px; 		/* pushes image to the left */
+	position: relative;			/* makes before element relative to .icon */
+	padding-bottom: 25px;		/* adds spacing between event rows */
+	padding-top: 25px;			/* adds spacing between event rows */
+} 
+
+/* Event box with text on the right side */
+
+#about img{
+	border: 5px solid var(--text-color2);
+	border-radius: 100%;
+}
+
+/* line that goes through timeline */
+.icon::before {
+    content: '';
+    position: absolute;
+	left: 50%;
+	height: 150%;		/* needs large height for screens under 400 */
+	margin-top: -80px;
+    width: 1px;
+    background-color: var(--text-color2);	
+    z-index: -1;
+	overflow: hidden;
+}
+
+/* End of About Styles */
+
+
+
+/* Start of CV */
+
+/* CV Container Styles */
+
+#cv .container h3{ 
+	border-bottom: 1px solid var(--text-color2); 
+	text-align: left;
+}
+
+#cv .container ul{ padding-left:0; }	/* Moves all list items to the left */
+
+#cv .container{
+	align-items: center;
+	justify-content: center;
+}
+
+/* CV Container Styles */
+
+
+
+/* CV Row-1 Styles */
+
+#cv .cv-row-1 ul{
+	list-style: none;
+	text-align: center;		/* moves row 1 list elements to the center */
+}
+
+/*centers row-1 */
+.cv-row-1 { 
+	margin-right: auto;
+	margin-left: auto;
+} 
+
+.cv-row-1 img{
+	border: 3px solid var(--text-color2);
+	border-radius: 100%;
+}
+
+/* CV Row-1 Styles */
+
+
+
+/* CV Font Awesome Styles */
+
+#cv .fa-stack { 
+	font-size: 1em;
+	z-index: 1;
+}
+
+#cv .fa-circle { color: var(--fontAwesome-color); }
+
+/* CV Font Awesome Styles */
+
+
+/* CV Row 2 Styles */
+
+#cv .cv-row-2 {
+	flex-direction: column;
+	width: 65%;
+	text-align: left;		/* Moves text towards row 1 */
+}
+
+#cv .cv-row-2 h3{ margin-top: 70px; } /* adds spacing between cv sections */
+
+#cv .cv-row-2 dt{ font-weight: bold; }
+
+/* CV Row 2 Styles */
+
+
+
+/* End of Cv Styles */
+
+
+
+/*Start of Contact Styles */
+
+/* Photo by <a href="https://unsplash.com/@hackkerhoantran?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Donald Trần</a> 
+on <a href="https://unsplash.com/photos/0w4cyXT7uo0?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+
+#contact{
+	background-image: url('../../../images/frog-background-default.webp');
+	background-size: cover;
+	background-position: center;
+	min-height: 100vh;		/* takes up full viewport height */
+	align-items: center;
+}
+
+#contact form{
+	display: flex;
+	height: 200%;
+	width: 100%;
+}
+	
+
+#contact h3{ padding-bottom: 15px; }	/* adds space between form and title */
+
+#contact .container { width: 100%; }
+
+#contact .container2 { width: 100%; }
+
+#contact .contact-left {
+	text-align: center;	/* moves towards the center */
+	width: 70%;
+	margin-left: auto;
+	margin-right:auto;
+}
+
+#contact .contact-right {
+	text-align: center;	/* moves towards the center */
+	width: 70%;
+	padding-bottom: 5%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#contact .contact-name { padding-bottom: 5%; } 	/* pushes email input down */
+
+#contact .contact-email { padding-bottom: 5%; }	/* pushes tel input down */
+
+#contact .contact-phone { padding-bottom: 5%; }	/* pushes comments input down */
+
+#contact .submit {
+	border: 1px solid var(--background-color1);
+	height: 100%;
+	width: 100%;
+	background-color: var(--text-color2);
+	color: var(--text-color1);
+	font-size: 1.5em;
+	border-radius: 10px;
+}
+
+#contact .submit:hover { 
+	background-color: var(--background-color3); 
+	cursor: pointer;
+}
+
+
+/* Input Styles */
+
+input[type="text"] {
+	width: 100%;
+	padding: 5% 0 5% 0;		/* increases feild height and width */
+	border-radius: 10px;
+}
+
+input[type="text"]:focus {
+	border: 1px solid var(--text-color2);
+	background-color: var(--background-color1);
+	transition: 300ms;
+}
+
+input[type="email"] {
+	width: 100%;
+	padding: 5% 0 5% 0;		/* increases feild height and width */
+	border-radius: 10px;
+}
+
+input[type="email"]:focus {
+	border: 1px solid var(--text-color2);
+	background-color: var(--background-color1);
+	transition: 300ms;
+}
+
+input[type="tel"] {
+	width: 100%;
+	padding: 5% 0 5% 0;		/* increases feild height and width */
+	border-radius: 10px;
+}
+
+input[type="tel"]:focus {
+	border: 1px solid var(--text-color2);
+	background-color: var(--background-color1);
+	transition: 300ms;
+}
+
+textarea {
+	width: 100%;
+	height: 200px;
+	border-radius: 10px;
+}
+
+textarea:focus {
+	border: 1px solid var(--text-color2);
+	background-color: var(--background-color1);
+	transition: 300ms;
+}
+
+/* Input Styles */
+
+
+
+/* End of Contact Styles */
+
+
+
+/* Start of Footer Styles */
+
+footer{ 
+	background-color: var(--background-color1);
+	display: flex;
+	align-items: center;
+}
+
+footer p { margin-left: 25px; } 	/* adds space to copywrite sign */
+
+footer ul {
+	display: flex;
+	flex-direction: row;
+	list-style: none;
+	margin-left: auto;
+	margin-right: 25px;
+}
+
+footer .fa-circle { color: var(--fontAwesome-color); }
+
+footer .fa-stack { font-size: 1em; }
+
+footer span:hover {
+	margin-top: -5px;
+	transition: 100ms;
+}
+
+/* End of Footer Styles */
+
+
+
+/* Media Queries */
+
+@media only screen and (min-width: 450px) {
+	
+	.icon::before {
+	height: 115%;		/* resizes line for screens wider than 450 */
+	margin-top: -30px;
+	}
+}
+
+
+@media only screen and (min-width: 768px){
+	
+	input#dark-theme-setting:checked ~ main #showcase{ background-image: url('../../../images/hero-large-phone-dark.webp');} 	/* dark mode background for tablets */
+	
+	input#dark-theme-setting:checked ~ main #contact{ background-image: url('../../../images/frog-background-large-phone-dark.webp'); }	/*dark mode background for tablets */
+	
+	#showcase { background-image: url('../../../images/hero-large-phone.webp'); }
+	
+	.container{ flex-direction: row;}
+	
+	
+	#portfolio div{ width: 40%; }			/* Keeps each div the same width */
+	
+	#portfolio .container{ width: 95%; }
+	
+	#portfolio .container div{ background-color: var(--background-color2);} /* background for tablets */
+	
+	#portfolio p{ text-align: justify; }
+
+
+	/* Event box with text on the left side */
+
+	#about div.event-left {
+		display: flex;
+		flex-direction: row;		/* goes opposite of event right */
+	}
+
+	#about .event-left .info {
+		width: 50%;		/* width of text div */
+		margin-right: 50px;	/* pushes the text away from the images */
+	}
+
+	#about .event-left .blank {
+		width: 50%;		/* width of blank div */
+		margin-right: 50px; /*centers image by being the same as info margin */
+		display: flex;
+	}
+
+	#about .event-left { text-align: right; }	/* text goes towards the image */
+
+	/* Event box with text on the left side */
+
+
+
+	/* Event box with text on the right side */
+
+	#about div.event-right {
+		display: flex;
+		flex-direction: row-reverse;	/* goes opposite of event left */
+	}
+
+	#about .event-right .info {
+		width: 50%;		/* width of text div */
+		margin-left: 50px;	/* pushes the text away from the images */
+	}
+
+	#about .event-right .blank {
+		width: 50%;		/* width of blank div */
+		margin-left: 50px; /* centers image by being the same as info margin */
+		display:flex;	/* Makes blank actually take up space */
+	}
+
+	#about .event-right { text-align: left; }	/* text goes towards the image */
+
+	/* Event box with text on the right side */
+
+	
+	#contact{ background-image: url('../../../images/frog-background-tablet.webp'); }		/* background for tablets */
+	
+	#contact .container { flex-direction: column; }
+	
+	#contact .container2 {
+		display: flex;
+		flex-direction: row;
+	}
+	
+	#contact .contact-right{
+		width:50%;
+		margin-left: 5px;
+		text-align: left;
+	}
+	
+	#contact .contact-left{
+		width:50%;
+		margin-right: 5px;
+		text-align: right;
+	}
+	
+	input[type="email"] {
+		width: 70%;
+		padding: 12px 20px;
+	}
+	
+	input[type="tel"] {
+		width: 70%;
+		padding: 12px 20px;
+	}
+	
+	input[type="text"] {
+		width: 70%;
+		padding: 12px 20px;
+	}
+	
+	textarea {
+		width: 80%;
+		height: 115%;
+	}
+}
+
+
+@media only screen and (min-width: 1000px) {
+	
+	input#dark-theme-setting:checked ~ main #showcase{ background-image: url('../../../images/hero-tablet-dark.webp');} 	/* dark mode background for tablets */
+	
+	input#dark-theme-setting:checked ~ main #contact{ background-image: url('../../../images/frog-background-tablet-dark.webp'); }	/*dark mode background for tablets */
+	
+	.header-box { flex-wrap: nowrap;} /*removes flex wrap */
+	
+	/* shows menu list */
+	
+	.header-box ul{
+		display: flex;
+		padding-left: 0;
+		padding-right: 0;
+		margin-left: auto;
+		border-top: none;
+	}	
+	
+	header label { display: none; } /* hides menu button */
+	
+	#showcase{ background-image: url('../../../images/hero-tablet.webp'); }	/* changes to tablet background */
+	
+	#showcase h1{ font-size: 2.5em;}
+	
+	#showcase h2{ font-size: 4em;}
+	
+	#portfolio div{width: 25%;}			/* Keeps each div the same width */
+	
+}
+
+
+@media only screen and (min-width: 1200px) {
+	
+	input#dark-theme-setting:checked ~ main #showcase{ background-image: url('../../../images/hero-pc-dark.webp');}	/*dark mode background for tablets */
+	
+	input#dark-theme-setting:checked ~ main #contact{ background-image: url('../../../images/frog-background-pc-dark.webp'); }	/*dark mode background for tablets */
+	
+	#showcase{ background-image: url('../../../images/hero-pc.webp'); }		/* background for pc */
+	
+	#portfolio div{ width: 20%; }		/* Keeps each div the same width */
+	
+	#contact{ background-image: url('../../../images/frog-background-pc.webp'); }		/* background for pc */
+}

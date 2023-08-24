@@ -1,0 +1,399 @@
+:root{
+	--background-colour : #ebe8fc;		/* light purple */
+	--header-colour : #cefad0;			/* light green */
+	--emphasis-1 : #008632;				/* green */
+	--emphasis-2: purple;				/* purple */
+	--focus: #d9f1ff;					/* light blue */
+	--background-dark : #454545;		/* dark grey - light black */
+	--dark-emphasis : white;			
+}
+/*color: #FFF9C4 !important;   warning subtle colour*/
+
+body { font-family: 'Roboto', sans-serif; } 
+
+section { padding-top: 70px; }				 /*padding for sevtion titles to be just under the nav bar */
+
+.btn{ --bs-btn-border-radius: 1rem;}		/* adjust button border radius to be slightly rounder */
+
+.pointer{ cursor: pointer; }				/* pointer for light/dark mode button */
+
+@keyframes shake {							/* rotates a little quickly to make a shake animation */
+	10%{ transform: rotate(5deg); }
+	20%{ transform: rotate(-5de); }
+	30%{ transform: rotate(5deg); }
+	40%{ transform: rotate(-5deg);}
+}
+
+.shake:hover {								/* uses shake class for  shake animation on hover and also makes fonts for font-awesome/links larger */
+	animation: shake .2s infinite;
+	font-size: 1.5rem;
+	font-weight: bold;
+	transition: 300ms;
+}
+.shake-no-grow:hover { animation: shake .2s infinite; }	/* uses shake class for  shake animation on hover */
+
+/* Page Colours */
+
+.text-warning { color: var(--header-colour) !important; } 
+
+.bg-success-subtle { --bs-success-bg-subtle: var(--background-colour)!important; }
+
+.bg-success { background-color: var(--header-colour) !important; }
+
+.btn-success{											/* changes button colours to better fit the page */
+	--bs-btn-border-color: #fff;						/* normal colour */
+	--bs-btn-hover-bg: var(--emphasis-2);				/* normal colour */
+	--bs-btn-bg: var(--emphasis-1);						/* hover colour */
+	--bs-btn-hover-border-color: var(--emphasis-1);		/* hover colour */
+	--bs-btn-active-bg: var(--background-colour);		/* click colour */
+	--bs-btn-active-border-color: var(--emphasis-2);	/* click colour */
+}
+
+.btn-secondary{ --bs-btn-bg: var(--emphasis-1);} /* modal close button */
+
+/* Page Colours */
+
+
+/* Light/Dark */
+
+.grow:hover {cursor: pointer;}	/* adds pointer to light/dark label on hover */
+
+input#light-theme-setting:checked ~ main label[for=light-theme-setting] {	/* styles the light button */
+    font-weight: bold;
+    background-color: #008632;		/* origninal emphasis colour */    
+    color: var(--dark-emphasis);	/* bold colour */
+	transition: 300ms;
+}
+
+input#dark-theme-setting:checked ~ main label[for=dark-theme-setting] {	/* styles the dark button */
+    font-weight: bold;
+    background-color: #008632;		/* origninal emphasis colour */  
+    color: var(--dark-emphasis);	/* bold colour */
+	transition: 300ms;
+}
+
+/* Light Mode Backgrounds */
+
+input#light-theme-setting:checked ~ main .bg-success { 				/* transition time to make change back from dark mode same as the change to dark mode */
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#light-theme-setting:checked ~ main .bg-success-subtle { 		/* transition time to make change back from dark mode same as the change to dark mode */
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#light-theme-setting:checked ~ main .bg-warning-subtle { 		/* transition time to make change back from dark mode same as the change to dark mode */
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+/* Light Mode Backgrounds */
+
+
+/* Light Mode Text */
+
+input#light-theme-setting:checked ~ main { 							/* transition time to make change back from dark mode same as the change to dark mode */
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+/* Light Mode Text */
+
+
+/* Dark Mode Backgrounds */
+
+input#dark-theme-setting:checked ~ main { 			/* swap variables around for dark mode backgrounds */
+	--background-colour : var(--background-dark);
+	--bs-success-bg-subtle: var(--background-dark) !important;
+	--bs-warning-bg-subtle: var(--background-dark) !important;
+	--emphasis-2: var(--dark-emphasis);
+	color: var(--dark-emphasis);
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #showcase{ 							/* changes background image to dark mode version */
+	background-image: url('../images/hero-default-dark.webp'); 
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #contact{ 							/* changes background image to dark mode version */
+	background-image: url('../images/frog-background-default-dark.webp');
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+/* Dark Mode Backgrounds */
+
+
+/* Dark Mode Text */
+
+input#dark-theme-setting:checked ~ main #portfolio p{ 		/* needed for card colour text change */
+	color: var(--dark-emphasis); 
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #portfolio h3{ 		/* needed for card colour text change */
+	color: var(--dark-emphasis); 
+	transition: all 300ms;
+	transition-timing-function: ease;
+}
+
+/* Dark Mode Text */
+
+
+/* General Dark Mode Changes */
+
+input#dark-theme-setting:checked ~ main #about .icon::before { 
+	background-color: var(--dark-emphasis);							/* makes time line line white in dark mode */
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main header{ 
+	--emphasis-1: var(--dark-emphasis);								/* changes header text to white without changing button emphasis */
+	transition: 300ms;
+	transition-timing-function: ease;
+}	
+
+input#dark-theme-setting:checked ~ main .navbar{ 
+	border-color: var(--dark-emphasis) !important;					/* changes navbar border to white */ 
+	transition: 300ms;
+	transition-timing-function: ease;
+}	
+
+input#dark-theme-setting:checked ~ main .border-success{ 
+	border-color: var(--dark-emphasis) !important;					/* changes border for offcanvas to white */
+	transition: 300ms;
+	transition-timing-function: ease;
+}			
+
+input#dark-theme-setting:checked ~ main .navbar{ 
+	--header-colour: var(--background-dark);						/* changes header-colour to white only for navbar */
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main #portfolio .bg-success{ 
+	--header-colour: var(--background-dark);						/* changes header-colour to white only for navbar */
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main .btn-success{ 
+	--bs-btn-hover-color: #008632;									/* keeps button emphasis colour the same in both light and dark */
+	--bs-btn-active-color: #008632;
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+input#dark-theme-setting:checked ~ main .card { --bs-card-border-color: var(--dark-emphasis);}
+
+input#dark-theme-setting:checked ~ main #contact label{ 
+	color: black;													/* keeps form the same in both light and dark */
+	transition: 300ms;
+	transition-timing-function: ease;
+}
+
+/* General Dark Mode Changes */
+
+input[name="page-theme"] { display: none; }
+
+/* Light/Dark */
+
+
+/* Nav Styles */
+
+/* colour class for hamburger menu and offcancas title */
+
+.colour{ color: var(--emphasis-1);} /* matches text colour with other nav elements */
+
+.colour:hover{
+	color: var(--emphasis-2);		/* matches styling for other nav elements */
+	font-weight: bold;	
+	font-size: 2rem;
+	transition: 200ms;
+}
+
+/* colour class for hamburger menu and offcancas title */
+
+header .bg-success-subtle { background-color: var(--header-colour) !important;} /* header colour needed to be overwritten with !important */
+
+header .navbar-brand {
+	color: var(--emphasis-1);
+	font-weight: bold;
+}
+
+header .navbar-brand:hover {	/* Transitions for Title on hover */
+	font-size: 2rem;		
+	transition: 200ms;
+}
+
+header .navbar-nav{
+	--bs-nav-link-color: var(--emphasis-1);
+	--bs-nav-link-hover-color: var(--emphasis-2);
+}
+
+header .navbar{
+	--bs-navbar-brand-hover-color: var(--emphasis-2);
+	border-bottom: 2px solid var(--emphasis-1);
+}
+
+.offcanvas { --bs-offcanvas-border-color: var(--emphasis-1); }	/* changes border right from transparent to emphasis-1 */
+
+/* Nav Styles */
+
+
+/* Showcase Styles */
+
+#showcase {
+	background-image: url('../images/hero-default.webp');
+	background-position: center;
+	background-size: cover;
+}
+
+#showcase h1{text-shadow: 2px 3px 3px rgba(0, 0, 0,0.6);}		/* text shadow for h1 element */
+#showcase h2{text-shadow: 2px 3px 3px rgba(0, 0, 0,0.6);}		/* text shadow for h2 element */
+
+
+/* Showcase Styles */
+
+
+/* Skills & Portfolio Styles */
+
+#skills p {text-align: justify;}		/*text align for non heading text */
+
+#portfolio p {text-align: justify;}		/*text align for non heading text */
+
+.card { background-color: var(--background-colour); }	/* opposite background colour to section */
+
+/* Skills & Portfolio Styles */
+
+
+/* About Styles */
+
+.icon {						/* makes before line relative to icon class */
+	position: relative;
+	z-index: 1;				/* needed for before line to be visable */
+}
+
+.icon::before {
+    content: '';
+    position: absolute;
+	left: 50%;
+	height: 150%;		/* needs large height to connect on all screens */
+    width: 1px;
+    background-color: var(--emphasis-1);	
+    z-index: -1;
+}
+
+/* About Styles */
+
+/* Contact */
+
+#contact {
+	background-image: url('../images/frog-background-default.webp');	/* background image for the contact section */
+	background-position: center;
+	background-size: cover;
+}
+/* Photo by <a href="https://unsplash.com/@shocking57?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Stephen Hocking</a> 
+on <a href="https://unsplash.com/images/animals/frog?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a> */
+
+#contact .text-colour{ text-shadow: 2px 3px 3px rgba(255, 255, 255,0.6); } /* better visablility for contact heading text */
+
+.form-control.is-invalid, .was-validated .form-control:invalid{
+	--bs-danger: #000;				/* removes red border */
+	--bs-danger-rgb: #000;			/* removes red shadow box */
+	background-image: url('../images/required-input-2.png'); /* required input image */
+}
+
+.form-control.is-valid, .was-validated .form-control:valid{
+	background-color: var(--header-colour);		/* valid input same as header colour */
+	transition: 200ms;
+	transition-timing-function: ease-in-out;
+}
+
+/* makes placeholder visible on focus */
+.form-floating > .form-control::placeholder { color: revert ;}						/* makes all placeholders back to being visable */				
+.form-floating > .form-control:not(:focus)::placeholder { color: transparent;}		/* makes all placeholder that are not focused invisible */
+
+input[type="text"]:focus {
+	background-color: var(--focus);
+	transition: 200ms;
+	transition-timing-function: ease-in-out;
+}
+
+input[type="email"]:focus {
+	background-color: var(--focus);
+	transition: 200ms;
+	transition-timing-function: ease-in-out;
+}
+input[type="tel"]:focus {
+	background-color: var(--focus);
+	transition: 200ms;
+	transition-timing-function: ease-in-out;
+}
+
+#floatingTextarea:focus {			/* target the id because the textarea tag wasnt specific enough */
+	background-color: var(--focus);
+	transition: 200ms;
+	transition-timing-function: ease-in-out;
+}
+
+/* Contact */
+
+@media only screen and (min-width: 768px){
+	
+	input#dark-theme-setting:checked ~ main #showcase{ background-image: url('../images/hero-large-phone-dark.webp');} 	/* dark mode background for tablets */
+	
+	input#dark-theme-setting:checked ~ main #contact{ background-image: url('../images/frog-background-large-phone-dark.webp'); }	/*dark mode background for tablets */
+	
+	#showcase { background-image: url('../images/hero-large-phone.webp'); }			/* background for tablets */
+	
+	#contact{ background-image: url('../images/frog-background-large-phone.webp'); }		/* background for tablets */
+	
+}
+
+@media only screen and (min-width: 1000px) {
+	
+	input#dark-theme-setting:checked ~ main #showcase{ background-image: url('../images/hero-tablet-dark.webp');} 	/* dark mode background for tablets */
+	
+	input#dark-theme-setting:checked ~ main #contact{ background-image: url('../images/frog-background-tablet-dark.webp'); }	/*dark mode background for tablets */
+	
+	#showcase{ background-image: url('../images/hero-tablet.webp'); }		/* background for tablets */
+	
+	#contact{ background-image: url('../images/frog-background-tablet.webp'); }	/* background for tablets */
+}
+
+@media only screen and (min-width: 1200px) {
+	
+	input#dark-theme-setting:checked ~ main #portfolio .parent:hover > .item:not(:hover) .content p{ color: transparent; } 	/* makes p transparent in darkmode on not hover */
+
+	input#dark-theme-setting:checked ~ main #showcase{ background-image: url('../images/hero-pc-dark.webp');}	/*dark mode background for pc */
+	
+	input#dark-theme-setting:checked ~ main #contact{ background-image: url('../images/frog-background-pc-dark.webp'); }	/*dark mode background for pc */
+	
+	#showcase{ background-image: url('../images/hero-pc.webp'); }		/* background for pc */
+	
+	/* portfolio transition animations that only work on desktop */
+	.card:hover{
+		transform: scale(1.1);				/* evenly scales the card when hovered over for emphasis*/
+		transition: 300ms;
+	}
+
+	.parent:hover > .item:not(:hover){ 		/* all items that are not hovered over in porfolio will be scaled down and made slighlty transparent */
+		transform: scale(0.8);
+		opacity: 0.5;
+		transition: 300ms;
+	}
+
+	.parent:hover > .item:not(:hover) .content p{ color: transparent; }	/* makes description invisible when not hovered */
+	.parent:hover > .item:not(:hover) .content h3{ font-weight: bold; } /* makes card titles easier to read while cards are transparent */
+	/* portfolio transition animations that only work on desktop */
+	
+	#contact{ background-image: url('../images/frog-background-pc.webp'); }		/* background for pc */
+}

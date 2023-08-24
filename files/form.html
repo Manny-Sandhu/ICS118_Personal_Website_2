@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewpoint" content="width=device-width,initial-scale=1">
+		<title>ICS 118 Lab 04 | Contact Form</title>
+	</head>
+	<body>
+		<main class="container">
+			<section id="contact-form">
+					<h1 class="page-title">Contact Form</h1>
+					<p>Please fill in the form below. We will return your inquiry within 1-2 business days.</p>
+					<form id="contact-inquiry" action="https://118.ics.devnich.ca/submit-form/" method="post">
+					
+						<div> <!-- Names -->
+							<label for="first-name">First Name:</label>
+							<input type="text" 
+							id="first-name" 
+							name="first_name" 
+							placeholder="First Name" 
+							required>
+							
+							<label for="last-name">Last Name:</label>
+							<input type="text" 
+							id="last-name" 
+							name="last_name" 
+							placeholder="Last Name" 
+							required>
+						</div>
+						
+						<div> <!-- Email //added pattern because I wanted to see how it worked//-->
+							<label for="email-address">Eamil Address:</label>
+							<input type="text" 
+							id="email-address" 
+							name="email" 
+							placeholder="Email@address.com"
+							pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"		
+							required>
+						</div>
+						
+						<div> <!-- Phone Number-->
+							<label for="phone-number">Phone Number:</label>
+							<input type="tel" 
+							id="phone-number" 
+							name="phone_number" 
+							placeholder="555-555-5555" 
+							required>
+						</div>
+						
+						<div> <!-- Contact Details Title -->
+							<h3>Contact Details</h3>
+						</div>
+						
+						<div> <!-- Contact Details -->
+							<label for="prefered-communication">Prefered Communication Method</label>
+							<select id="prefered-communication" name="prefered_communication">
+								<option value="phone">Phone</option>
+								<option value="email">Email</option>
+								<option value="text">Text(SMS)</option>
+							</select>
+						</div>
+						
+						<div> <!-- Request Type Title -->
+							<h3>Request Type</h3>
+						</div>
+						
+						<div> <!-- Proposal Request -->
+							<label for="Request-Proposal"></label>
+							<input type="checkbox" name="request_type[]" value="Request_Proposal" id="Request-Proposal">
+							
+							<label for="request-proposal">Request for Proposal</label>
+							<select id="request-proposal" name="request_proposal">
+								<option value="">--Choose One--</option>
+								<option value="static-website">Static HTML/CSS Website</option>
+								<option value="dynamic-website">Dynamic HTML/CSS Website</option>
+								<option value="basic-wordpress">Basic WordPress Website</option>
+								<option value="e-commerce">E-Commerce Website</option>
+							</select>
+							
+							<label for="proposed-website-pages"></label>
+							<input type="number" id="proposed-website-pages" name="proposed_website_pages" placeholder="#Pages">
+							
+						</div>
+						
+						<div> <!-- Support Type -->
+							<label for="Support-Type"></label>
+							<input type="checkbox" name="request_type[]" value="Support_Type" id="Support-Type">
+							
+							<label for="support-type">Technical Support</label>
+							<select id="support-type" name="support_type">
+								<option value="">--Choose One--</option>
+								<option value="ui/ux">User Interface / User Experience</option>
+								<option value="errors">Errors</option>
+								<option value="search-engine-placement">Search engine Placement</option>
+								<option value="other">Other</option>
+							</select>
+						</div>
+							
+						<div> <!-- Sales -->
+							<label for="Sales-Inquiry-Type"></label>
+							<input type="checkbox" name="request_type[]" value="Sales_Inquiry_Type" id="Sales-Inquiry-Type">
+							
+							<label for="sales-inquiry-type">Sales Questions</label>
+							<select id="sales-inquiry-type" name="sales_inquiry_type">
+								<option value="">--Choose One--</option>
+								<option value="website-creation">Website Creation</option>
+								<option value="seo">Search Engine Optimization</option>
+								<option value="webmastering">Webmastering</option>
+								<option value="hosting">Web Hosting</option>
+							</select>
+							
+							<label for="budget-total"></label>
+							<input type="number" id="budget-total" name="budget_total" placeholder="Budget" min="1" max="1000">
+						</div>
+						
+						<div> <!-- Request Urgency -->
+							<h3>Request Urgency</h3>
+						</div>
+						
+						<div> <!-- Speed Normal -->
+							<input type="radio" name="urgency_speed" value="normal" id="urgency-speed-normal" checked>
+							<label for="urgency-speed-normal">Normal</label>
+						</div>
+						
+						<div> <!-- Speed Elevated -->
+							<input type="radio" name="urgency_speed" value="elevated" id="urgency-speed-elevated">
+							<label for="urgency-speed-elevated">Elevated</label>
+						</div>
+						
+						<div> <!-- High Urgency -->
+							<input type="radio" name="urgency_speed" value="normal" id="urgency-speed-high">
+							<label for="urgency-speed-high">High Urgency</label>
+						</div>	
+						
+						<div> <!-- Comments Title -->
+							<h3>Comments</h3>
+						</div>
+						
+						<div> <!--Comments Area -->
+							<div><label for="comments-area">Please provide as much information as possible about your request:</label></div>
+							<textarea id="comments-area" name="comments_area" rows="5" cols="60" placeholder="Enter Comments Here"></textarea>
+						</div>
+						
+						<div> <!-- Submit button -->
+							<button class="button-1">Submit Now</button>
+						</div>
+					</form>
+			</section>
+		</main>
+	</body>
+</html>
+<!-- Web Page Created By: Manny Sandhu -->

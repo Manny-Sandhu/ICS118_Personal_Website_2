@@ -1,0 +1,105 @@
+@media (min-width: 768px){
+	/* restores the showcae h1 height */
+	section#showcase h2{
+		font-size: 6em;
+	}
+	
+	/*restores width based upon twxtarea "cols" */
+	textarea{
+		max-width: inherit;
+	}
+	
+	/*makes flex boxes go back to side by side */
+	.container{
+		flex-direction: row;
+	}
+	
+	/*this will stop the newsletter from centering in the section */
+	section#newsletter form{
+		margin-right: 0;
+	}
+	
+	/* adds white space to the aside*/
+	aside{
+		margin-left: 3rem;
+	}
+}
+/* resets the header container so mobile menu can go full width */
+header .container {width: 100%;}
+header .container #branding {width: 80%;}
+
+/* mobile menu goes full width and aligns center */
+nav{
+	text-align: center;
+	line-height: 70px;
+	width: 100%;
+}
+
+/* hides nav menu */
+header nav ul{
+	display: none;
+}
+
+/* mobile menu needs a bottom border to sperate the options */
+nav ul a {
+	display: block;
+	border-top: 1px solid #EAEAEB;
+	margin: 0;
+}
+
+#toggle{
+	display: none;
+}
+
+/* makes the toggle menu a drop down */
+#toggle:checked ~ul{
+	display: block;
+}
+
+/* overrides the padding from the last lab */
+header li {padding: 0px;}
+
+header nav ul{ margin-bottom: -15px;}
+
+/* style for the hamburger bar */
+nav label {
+	font-size: 26px;
+}
+
+/* set styles for the non-mobile menu */
+@media only screen and (min-width: 768px) {
+	/* nav menu auto sizes */
+	nav { width: auto; }
+	nav label { display: none}
+	
+	/* moves menu up to the right edge */
+	header nav { margin-right: 0px; }
+	
+	/* makes menu horizontal again */
+	header nav ul {
+		display: flex;
+		flex-direction: row;
+	}
+	/* undo the mobil menu styling */
+	nav ul a {
+		border-top: 0px;
+		margin: 0;
+		padding: 0 10px;
+	}
+	
+	header nav ul {margin-bottom: 0px;}
+	
+	header .container { width: 95%; }
+	header .container #branding {width: auto;}
+}
+
+@media only screen and (min-width: 1000px) {
+	
+	/* add some more padding for links on large tablets/desktops */
+	nav ul a {
+		padding: 0 20px;
+	}
+	
+	/* restores the header container width */
+	header . container {width: 80%;}	
+}
